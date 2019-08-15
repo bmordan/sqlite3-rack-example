@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-size: 45px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <%@db.execute("SELECT * FROM numbers;") do |row|%>
+                <li><a href="?update=<%=row[0]%>"><%=row[1]%></a></li>
+            <%end%>
+        <ul>
+        <a href="?insert=<%=rand(1..10)%>">ADD A NUMBER</a>
+    </body>
+</html>
